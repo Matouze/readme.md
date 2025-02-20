@@ -1,7 +1,7 @@
 # Write code below 💖
 import random
 
-symbol = ['🍒','🍇', '🍉','🍒','🍇', '🍉','🍒','🍇', '🍉', '7️⃣','7️⃣']
+symbol = ['🍒','🍇', '🍉','🍒','🍇', '🍉','🍒','🍇', '🍉', '7️⃣ ','7️⃣ ']
 
 
 def play():
@@ -14,16 +14,16 @@ def play():
     print()
     if result == ['🍒','🍒','🍒']:
       print ('You win a beer')
-      gain.append ('Beer')
+      gain.append ('Beer !🍺')
     elif result == ['🍇','🍇','🍇']:
       print ('You win a whiskey')
-      gain.append ('Whiskey')
+      gain.append ('Whiskey !🥃')
     elif result == ['🍉','🍉','🍉']:
       print ('You win a cigar')
-      gain.append ('Cigar')
-    elif result == ['7️⃣','7️⃣','7️⃣']:
+      gain.append ('Cigar ! 🚬')
+    elif result == ['7️⃣ ','7️⃣ ','7️⃣ ']:
       print ('Jackpot !💰')
-      gain.append ('JACKPOT')
+      gain.append ('JACKPOT! 💰')
     else:
       print ("You'll have a better luck next time ! ")
     token -= 1
@@ -48,7 +48,7 @@ def play():
     
     if keep == 'N':
       print ('Thank you, goodbye')
-      print(f'Your gains: {", ".join(gain)} 🎉')
+      print(f'Your gains: {", ".join(gain)} ')
       break
     while keep != 'Y':
       print('Wrong command, try again') 
