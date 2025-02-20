@@ -1,0 +1,53 @@
+# Write code below 💖
+import random
+
+symbol = ['🍒','🍇', '🍉','🍒','🍇', '🍉','🍒','🍇', '🍉', '7️⃣','7️⃣']
+
+
+def play():
+  token = int(input('Enter the number of tokens you want to use:  ')) 
+  gain = []
+  while True:
+    result = random.choices(symbol, k=3)
+    print()
+    print (" | ".join(result)  )
+    print()
+    if result == ['🍒','🍒','🍒']:
+      print ('You win a beer')
+      gain.append ('Beer')
+    elif result == ['🍇','🍇','🍇']:
+      print ('You win a whiskey')
+      gain.append ('Whiskey')
+    elif result == ['🍉','🍉','🍉']:
+      print ('You win a cigar')
+      gain.append ('Cigar')
+    elif result == ['7️⃣','7️⃣','7️⃣']:
+      print ('Jackpot !💰')
+      gain.append ('JACKPOT')
+    else:
+      print ("You'll have a better luck next time ! ")
+    token -= 1
+    if token > 1:
+      print (f'Tokens remaining {token} \n ')
+    elif token == 1:
+      print (f'Token remaining {token} \n ')
+    else:
+      print ("You ran out of token \n ")
+      notoken = input('Do you want to refill your tokens ? (Y/N)   ').strip().upper()
+      if notoken != 'Y':
+       print ('Thank you, goodbye')
+       break
+      else:
+        token = int(input('Enter the number of tokens you want to refill:  '))
+
+    keep = input('Do you want to keep playing ?(Y or N)  ').strip().upper()
+    print("\n" * 6)
+    
+    if keep != 'Y':
+      if gain:
+        print(f'Your gains: {", ".join(gain)} 🎉')
+      else:
+        print("Unfortunately, you didn't win anything this time. 😢")
+      break
+
+play()
