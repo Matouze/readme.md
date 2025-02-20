@@ -34,20 +34,25 @@ def play():
     else:
       print ("You ran out of token \n ")
       notoken = input('Do you want to refill your tokens ? (Y/N)   ').strip().upper()
-      if notoken != 'Y':
-       print ('Thank you, goodbye')
-       break
+      if notoken == 'N':
+        print ('Thank you, goodbye')
+        print(f'Your gains: {", ".join(gain)} 🎉')
+        break
+      while notoken != 'Y':
+        print('Wrong command, try again')
+        notoken = input('Do you want to refill your tokens ? (Y/N)   ').strip().upper()
       else:
         token = int(input('Enter the number of tokens you want to refill:  '))
-
     keep = input('Do you want to keep playing ?(Y or N)  ').strip().upper()
-    print("\n" * 6)
+    print("\n" * 20)
     
-    if keep != 'Y':
-      if gain:
-        print(f'Your gains: {", ".join(gain)} 🎉')
-      else:
-        print("Unfortunately, you didn't win anything this time. 😢")
+    if keep == 'N':
+      print ('Thank you, goodbye')
+      print(f'Your gains: {", ".join(gain)} 🎉')
       break
+    while keep != 'Y':
+      print('Wrong command, try again') 
+      keep = input('Do you want to keep playing ?(Y or N)  ').strip().upper()
+
 
 play()
